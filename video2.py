@@ -16,7 +16,7 @@ def start_face_detection() -> dict:
     return REKOGNITION_CLIENT.start_face_detection(
          Video={
         'S3Object': {
-            'Bucket': 'myawsbucket-01',
+            'Bucket': 'BUCKET NAME',
             'Name': 'video.mp4',
         
         }
@@ -24,21 +24,21 @@ def start_face_detection() -> dict:
         
     ClientRequestToken='123',
     NotificationChannel={
-            "SNSTopicArn": "arn:aws:sns:us-east-2:348980249432:eyecatch",
-            "RoleArn": "arn:aws:iam::348980249432:role/eyewatch"
+            "SNSTopicArn": "arn:aws:sns:",
+            "RoleArn": "arn:aws:iam::"
         },
     FaceAttributes="ALL",
     JobTag='133'
 ) 
 response = REKOGNITION_CLIENT.get_face_detection(
-    JobId='46a6a754d5cacc0cb1e6931f3110c83b782c762a781c4decbc7cd59f4ae52b2e',
+    JobId='String',
     MaxResults=123,
 
 )
 # send_data(response)         
 #     })    
 print(start_face_detection()) 
-# job_id= '46a6a754d5cacc0cb1e6931f3110c83b782c762a781c4decbc7cd59f4ae52b2e'
+# job_id= ''
 # print(response)
 # result = REKOGNITION_CLIENT.get_face_detection(JobId=job_id)
 # result
